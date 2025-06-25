@@ -1,7 +1,8 @@
 const express = require('express')
-const router= express.Router()
 const { signup, login, logout,verifyemail,forgotpassword,resetpassword ,checkAuth} = require("../controllers/authcontroller")
 const verifyToken = require("../middleware/verifyToken")
+
+const router= express.Router()
 
 router.get("/check-auth",verifyToken,checkAuth)
 router.post("/signup",signup)
